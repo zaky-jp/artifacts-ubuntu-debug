@@ -1,0 +1,5 @@
+# ignore git-related local files
+*/.git*
+
+# ignore test data
+test-data/*
