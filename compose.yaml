@@ -1,4 +1,0 @@
-services:
-  ubuntu-debug:
-    image: ubuntu-debug:22.04
-    build: .
