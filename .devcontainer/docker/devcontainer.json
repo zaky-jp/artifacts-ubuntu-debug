@@ -1,0 +1,26 @@
+{
+	"name": "docker",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "../.."
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+	"runArgs": [
+		"-v=/var/run/docker.sock:/var/run/docker.sock",
+		"--name=docker-${localWorkspaceFolderBasename}"
+	],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"hadolint.cliOptions": [
+					"--no-color"
+				]
+			},
+			"extensions": [
+				"exiasr.hadolint"
+			]
+		}
+	}
+}

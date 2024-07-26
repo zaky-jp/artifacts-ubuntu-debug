@@ -1,0 +1,27 @@
+{
+	"name": "podman",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "../..",
+		"args": {
+			"APT_MIRROR_PRIORITY1": "http://repo.jing.rocks/ubuntu-ports/",
+			"APT_MIRROR_PRIORITY2": "http://ftp.kaist.ac.kr/ubuntu-ports/"
+		}
+	},
+	"securityOpt": [
+		"seccomp=unconfined",
+		"label=disable"
+	],
+	"runArgs": [
+		"--device=/dev/fuse:rw",
+		"-v=/var/lib/containers:/var/lib/containers:Z",
+		"--name=buildah-${localWorkspaceFolderBasename}"
+	],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"github.copilot.editor.enableAutoCompletions": false
+			}
+		}
+	}
+}
