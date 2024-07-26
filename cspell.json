@@ -1,0 +1,12 @@
+{
+  "dictionaryDefinitions": [
+    {
+      "name": "local",
+      "path": ".config/dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": [
+    "local"
+  ]
+}

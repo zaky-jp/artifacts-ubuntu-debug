@@ -1,5 +1,3 @@
-# ignore git-related local files
-*/.git*
+*
+!src
 
-# ignore test data
-test-data/*
