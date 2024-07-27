@@ -1,12 +1,25 @@
 {
-  "dictionaryDefinitions": [
-    {
-      "name": "local",
-      "path": ".config/dictionary.txt",
-      "addWords": true
-    }
-  ],
-  "dictionaries": [
-    "local"
-  ]
+	"dictionaryDefinitions": [
+		{
+			"name": "local",
+			"path": ".config/cspell/dictionary.txt",
+			"addWords": true
+		}
+	],
+	"import": [
+		"@cspell/dict-docker/cspell-ext.json",
+		"@cspell/dict-makefile/cspell-ext.json"
+	],
+	"dictionaries": [
+		"local",
+		"bash"
+	],
+	"languageSettings": [
+		{
+			"languageId": "shellscript",
+			"dictionaries": [
+				"bash"
+			]
+		}
+	]
 }

@@ -19,7 +19,9 @@
 				]
 			},
 			"extensions": [
-				"exiasr.hadolint"
+				"exiasr.hadolint",
+				"EditorConfig.EditorConfig",
+				"mads-hartmann.bash-ide-vscode"
 			]
 		}
 	}

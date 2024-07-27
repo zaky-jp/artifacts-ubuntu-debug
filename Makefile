@@ -14,4 +14,4 @@ build: src/Dockerfile
 	docker build -f src/Dockerfile -t ubuntu-base:$(IMAGE_TAG) .
 .PHONY: clean
 clean:
-	docker rmi ubuntu-base:$(IMAGE_TAG) || true
+	docker image ls ubuntu-base:$(IMAGE_TAG) 1>/dev/null 2>&1 && docker rmi ubuntu-base:$(IMAGE_TAG) || true
