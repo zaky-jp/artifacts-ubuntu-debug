@@ -3,7 +3,7 @@ minimal ubuntu container with a bit of opinionated tweaks
 
 # how-to-use
 ```sh
-make build
+make container
 ```
 
 # tweaks introduced

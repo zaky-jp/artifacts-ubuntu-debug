@@ -9,8 +9,11 @@ IMAGE_TAG = rolling
 # actions
 .PHONY: all
 all: clean build
-.PHONY: build
-build: src/Dockerfile
+.PHONY: cspell
+cspell:
+	npm install
+.PHONY: container
+container: src/Dockerfile
 	docker build -f src/Dockerfile -t ubuntu-base:$(IMAGE_TAG) .
 .PHONY: clean
 clean:

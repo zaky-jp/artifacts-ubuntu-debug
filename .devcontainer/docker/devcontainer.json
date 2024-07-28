@@ -2,27 +2,44 @@
 	"name": "docker",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"context": "../.."
+		"context": "../..",
+		"options": [
+			"--tag=docker-${localWorkspaceFolderBasename}:rolling"
+		]
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
 	},
-	"runArgs": [
-		"-v=/var/run/docker.sock:/var/run/docker.sock",
-		"--name=docker-${localWorkspaceFolderBasename}"
+	"mounts": [
+		{
+			"type": "bind",
+			"source": "${localEnv:HOME}/.config/cspell/dictionary.txt",
+			"target": "/root/.config/cspell/dictionary.txt"
+		},
+		{
+			"type": "bind",
+			"source": "/var/run/docker.sock",
+			"target": "/var/run/docker.sock"
+		}
 	],
+	"runArgs": [
+		"--name=vsc-docker-${localWorkspaceFolderBasename}"
+	],
+	"onCreateCommand": "make cspell",
 	"customizations": {
 		"vscode": {
 			"settings": {
 				"hadolint.cliOptions": [
-					"--no-color"
+					"--no-color" // cspell: ignore color
 				]
 			},
+			// cspell:disable
 			"extensions": [
 				"exiasr.hadolint",
 				"EditorConfig.EditorConfig",
 				"mads-hartmann.bash-ide-vscode"
 			]
+			// cspell:enable
 		}
 	}
 }
