@@ -1,6 +1,6 @@
 {
-    "conventionalCommits.scopes": [
-        "Dev Env",
-        "Container"
-    ]
+	"conventionalCommits.scopes": [
+		"dev-env",
+		"container"
+	]
 }
